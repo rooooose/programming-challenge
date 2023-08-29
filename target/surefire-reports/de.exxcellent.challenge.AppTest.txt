@@ -1,0 +1,18 @@
+-------------------------------------------------------------------------------
+Test set: de.exxcellent.challenge.AppTest
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.195 s <<< FAILURE! - in de.exxcellent.challenge.AppTest
+de.exxcellent.challenge.AppTest.runFootball  Time elapsed: 0.114 s  <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	Type mismatch: cannot convert from int to String
+
+	at de.exxcellent.challenge.AppTest.runFootball(AppTest.java:33)
+
+de.exxcellent.challenge.AppTest.runWeather  Time elapsed: 0.002 s  <<< ERROR!
+java.lang.Error: 
+Unresolved compilation problem: 
+	Type mismatch: cannot convert from int to String
+
+	at de.exxcellent.challenge.AppTest.runWeather(AppTest.java:28)
+

@@ -14,12 +14,18 @@ public final class App {
      */
     public static void main(String... args) {
 
-        // Your preparation code …
+   
+        String dataSource = args[1];
+        ArrayList<ArrayList<String>> data = CsvReader.read(dataSource);
 
-        String dayWithSmallestTempSpread = "Someday";     // Your day analysis function call …
-        System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
-
-        String teamWithSmallestGoalSpread = "A good team"; // Your goal analysis function call …
-        System.out.printf("Team with smallest goal spread       : %s%n", teamWithSmallestGoalSpread);
+        if(args[1] == "weather.csv"){
+            String dayWithSmallestTempSpread = MinDiffProcessor.run(data);
+            System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
+        }
+        else if(args[1] == "football.csv"){
+            String teamWithSmallestGoalSpread = MinDiffProcessor.run(data);
+            System.out.printf("Team with smallest goal spread : %s%n", teamWithSmallestGoalSpread);
+        } 
+           
     }
 }
