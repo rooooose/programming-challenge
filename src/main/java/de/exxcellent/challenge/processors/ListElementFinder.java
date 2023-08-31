@@ -1,5 +1,5 @@
 package de.exxcellent.challenge.processors;
 
-public class ListElementFinder {
+public interface ListElementFinder {
     
 }

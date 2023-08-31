@@ -13,13 +13,9 @@ import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import de.exxcellent.challenge.processors.MinDiffProcessor;
 import de.exxcellent.challenge.readers.CsvReader;
 
-
-
-//IMPORT CUSTOM STATIC CLASSES
-
 /**
- * Example JUnit 5 test case.
- * @author Benjamin Schmid <benjamin.schmid@exxcellent.de>
+ * JUnit 5 test case.
+ * @author Shir Frank <shir_fl@yahoo.fr>
  */
 class AppTest {
 
@@ -55,7 +51,7 @@ class AppTest {
 
     @Test
     void testfindMinEl() {
-        assertEquals(expectedMinEl, MinDiffProcessor.findElementList(expectedDiffArr), "Minimum difference element should be el1");
+        assertEquals(expectedMinEl, MinDiffProcessor.findListElement(expectedDiffArr), "Minimum difference element should be el1");
     }
 
     @Test
