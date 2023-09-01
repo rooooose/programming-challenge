@@ -11,7 +11,7 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import de.exxcellent.challenge.processors.MinDiffProcessor;
-import de.exxcellent.challenge.readers.CsvReader;
+import de.exxcellent.challenge.readers.*;
 
 /**
  * JUnit 5 test case.
@@ -23,6 +23,8 @@ class AppTest {
     private ArrayList<ArrayList<String>> expectedInitArr = new ArrayList<ArrayList<String>>();
     private ArrayList<ArrayList<String>> expectedDiffArr = new ArrayList<ArrayList<String>>();
     private String expectedMinEl;
+    private CsvReader csvReader = new CsvReader();
+    private MinDiffProcessor minDiffProcessor = new MinDiffProcessor();
 
     @BeforeEach
     void setUp() {
