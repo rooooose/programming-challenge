@@ -1,18 +1,24 @@
 -------------------------------------------------------------------------------
 Test set: de.exxcellent.challenge.AppTest
 -------------------------------------------------------------------------------
-Tests run: 3, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.195 s <<< FAILURE! - in de.exxcellent.challenge.AppTest
-de.exxcellent.challenge.AppTest.runFootball  Time elapsed: 0.114 s  <<< ERROR!
-java.lang.Error: 
-Unresolved compilation problem: 
-	Type mismatch: cannot convert from int to String
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.056 s <<< FAILURE! - in de.exxcellent.challenge.AppTest
+de.exxcellent.challenge.AppTest.runFootball  Time elapsed: 0.028 s  <<< ERROR!
+java.lang.UnsupportedOperationException: Unimplemented method 'read'
+	at de.exxcellent.challenge.AppTest.runFootball(AppTest.java:67)
 
-	at de.exxcellent.challenge.AppTest.runFootball(AppTest.java:33)
+de.exxcellent.challenge.AppTest.testfindMinEl  Time elapsed: 0 s  <<< ERROR!
+java.lang.UnsupportedOperationException: Unimplemented method 'findListELement'
+	at de.exxcellent.challenge.AppTest.testfindMinEl(AppTest.java:57)
 
-de.exxcellent.challenge.AppTest.runWeather  Time elapsed: 0.002 s  <<< ERROR!
-java.lang.Error: 
-Unresolved compilation problem: 
-	Type mismatch: cannot convert from int to String
+de.exxcellent.challenge.AppTest.testCalcDiffs  Time elapsed: 0 s  <<< ERROR!
+java.lang.UnsupportedOperationException: Unimplemented method 'calculateDifferences'
+	at de.exxcellent.challenge.AppTest.testCalcDiffs(AppTest.java:52)
 
-	at de.exxcellent.challenge.AppTest.runWeather(AppTest.java:28)
+de.exxcellent.challenge.AppTest.runWeather  Time elapsed: 0 s  <<< ERROR!
+java.lang.UnsupportedOperationException: Unimplemented method 'read'
+	at de.exxcellent.challenge.AppTest.runWeather(AppTest.java:62)
+
+de.exxcellent.challenge.AppTest.testReadCsv  Time elapsed: 0 s  <<< ERROR!
+java.lang.UnsupportedOperationException: Unimplemented method 'read'
+	at de.exxcellent.challenge.AppTest.testReadCsv(AppTest.java:46)
 

@@ -43,17 +43,18 @@ class AppTest {
 
     @Test
     void testReadCsv() {
-        assertTrue(Arrays.deepEquals(expectedInitArr, CsvReader.read(dataSource)), "the result contains all the content of the csv in a nested array");
+        assertEquals(expectedInitArr, csvReader.read(dataSource), "The result is not identical to the csv file content");
+        // assertTrue(Arrays.deepEquals(expectedInitArr, csvReader.read(dataSource)), "the result contains all the content of the csv in a nested array");
     }
 
     @Test
     void testCalcDiffs() {
-        assertTrue(Arrays.deepEquals(expectedDiffArr, MinDiffProcessor.calculateDifferences(expectedInitArr)), "The array contains the differences");
+        assertEquals(expectedDiffArr, minDiffProcessor.calculateDifferences(expectedInitArr), "The array doesn't contain the differences");
     }
 
     @Test
     void testfindMinEl() {
-        assertEquals(expectedMinEl, MinDiffProcessor.findListElement(expectedDiffArr), "Minimum difference element should be el1");
+        assertEquals(expectedMinEl, minDiffProcessor.findListElement(expectedDiffArr), "Minimum difference element should be el1");
     }
 
     @Test
