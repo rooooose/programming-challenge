@@ -8,7 +8,7 @@ import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
-public class CsvReader implements DataReader {
+public class CsvReader implements DataReader<String> {
 
     @Override
     public List<List<String>> read(String dataSource) throws FileNotFoundException, IOException {
@@ -18,7 +18,7 @@ public class CsvReader implements DataReader {
             String line;
             while ((line = br.readLine()) != null) {
                 String[] values = line.split(",");
-                records.add(Arrays.asList(values));
+                records.add(new ArrayList<>(Arrays.asList(values)));
             }
         }
         return records;

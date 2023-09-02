@@ -4,8 +4,8 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
 
-public interface DataReader {
+public interface DataReader<T> {
 
-    List<List<String>> read(String dataSource) throws FileNotFoundException, IOException;
+    List<List<T>> read(String dataSource) throws FileNotFoundException, IOException;
     
 }

@@ -1,9 +1,10 @@
 package de.exxcellent.challenge.processors;
 
+import java.util.Comparator;
 import java.util.List;
 
-public interface ListElementFinder {
+public interface ListElementFinder<T> {
 
-    String findListElement(List<List<String>> data);
+    String findListElement(List<List<T>> data, Comparator<T> comp);
     
 }

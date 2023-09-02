@@ -5,6 +5,9 @@ import de.exxcellent.challenge.readers.CsvReader;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
 import java.util.List;
 
 /**
@@ -26,17 +29,26 @@ public final class App {
         String dataSource = "src/main/resources/de/exxcellent/challenge/" + args[1];
         CsvReader csvReader = new CsvReader();
         List<List<String>> data;
+        int diffCol1Id;
+        int diffCol2Id;
         try {
-            data = csvReader.read(dataSource);
+            data = new ArrayList<>(csvReader.read(dataSource));
             MinDiffProcessor minDiffProcessor = new MinDiffProcessor();
             // System.out.println(data);
-
-            if(args[1] == "weather.csv"){
-                String dayWithSmallestTempSpread = minDiffProcessor.run(data);
+            
+            if("weather.csv".equals(args[1])){
+                // System.out.println("OUI");
+                diffCol1Id = 1;
+                diffCol2Id = 2;
+                // List<List<String>> dataWithDifferences = minDiffProcessor.calculateDifferencesBetweenCols(data, diffCol1Id, diffCol2Id);
+                // System.out.println(dataWithDifferences);
+                String dayWithSmallestTempSpread = minDiffProcessor.run(data, diffCol1Id, diffCol2Id);
                 System.out.printf("Day with smallest temperature spread : %s%n", dayWithSmallestTempSpread);
             }
-            else if(args[1] == "football.csv"){
-                String teamWithSmallestGoalSpread = minDiffProcessor.run(data);
+            else if("football.csv".equals(args[1])){
+                diffCol1Id = 5;
+                diffCol2Id = 6;
+                String teamWithSmallestGoalSpread = minDiffProcessor.run(data, diffCol1Id, diffCol2Id);
                 System.out.printf("Team with smallest goal spread : %s%n", teamWithSmallestGoalSpread);
             } 
         } catch (IOException e) {
