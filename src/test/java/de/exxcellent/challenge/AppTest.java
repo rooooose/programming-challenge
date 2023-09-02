@@ -4,12 +4,13 @@ import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import java.util.List;
+import java.io.FileNotFoundException;
+import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import static org.junit.jupiter.api.Assertions.assertArrayEquals;
 import de.exxcellent.challenge.processors.MinDiffProcessor;
 import de.exxcellent.challenge.readers.*;
 
@@ -20,31 +21,30 @@ import de.exxcellent.challenge.readers.*;
 class AppTest {
 
     private String dataSource;
-    private ArrayList<ArrayList<String>> expectedInitArr = new ArrayList<ArrayList<String>>();
-    private ArrayList<ArrayList<String>> expectedDiffArr = new ArrayList<ArrayList<String>>();
+    private List<List<String>> expectedInitArr = new ArrayList<>();
+    private List<List<String>> expectedDiffArr = new ArrayList<>();
     private String expectedMinEl;
-    private CsvReader csvReader = new CsvReader();
+    private CsvReader csvReader = new CsvReader(dataSource);
     private MinDiffProcessor minDiffProcessor = new MinDiffProcessor();
 
     @BeforeEach
     void setUp() {
         dataSource = "src\\main\\resources\\de\\exxcellent\\challenge\\test.csv";
 
-        expectedInitArr.add(new ArrayList<String>(Arrays.asList("Element","Max","Min")));
-        expectedInitArr.add(new ArrayList<String>(Arrays.asList("el1","3","4")));
-        expectedInitArr.add(new ArrayList<String>(Arrays.asList("el2","7","10")));
+        expectedInitArr.add(Arrays.asList("Element","Max","Min"));
+        expectedInitArr.add(Arrays.asList("el1","3","4"));
+        expectedInitArr.add(Arrays.asList("el2","7","10"));
 
-        expectedDiffArr.add(new ArrayList<String>(Arrays.asList("Element","Max","Min","Diff")));
-        expectedDiffArr.add(new ArrayList<String>(Arrays.asList("el1","3","4","1")));
-        expectedDiffArr.add(new ArrayList<String>(Arrays.asList("el2","7","10","3")));
+        expectedDiffArr.add(Arrays.asList("Element","Max","Min","Diff"));
+        expectedDiffArr.add(Arrays.asList("el1","3","4","1"));
+        expectedDiffArr.add(Arrays.asList("el2","7","10","3"));
 
         expectedMinEl = "el1";
     }
 
     @Test
-    void testReadCsv() {
-        assertEquals(expectedInitArr, csvReader.read(dataSource), "The result is not identical to the csv file content");
-        // assertTrue(Arrays.deepEquals(expectedInitArr, csvReader.read(dataSource)), "the result contains all the content of the csv in a nested array");
+    void testReadCsv() throws FileNotFoundException, IOException {
+        assertEquals(expectedInitArr, csvReader.read(), "The result is not identical to the csv file content");
     }
 
     @Test

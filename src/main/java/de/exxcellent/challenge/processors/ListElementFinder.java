@@ -1,9 +1,9 @@
 package de.exxcellent.challenge.processors;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface ListElementFinder {
 
-    String findListElement(ArrayList<ArrayList<String>> data);
+    String findListElement(List<List<String>> data);
     
 }

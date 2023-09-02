@@ -1,8 +1,8 @@
 package de.exxcellent.challenge.processors;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public interface DifferenceProcessor {
 
-    ArrayList<ArrayList<String>> calculateDifferences(ArrayList<ArrayList<String>> data);
+    List<List<String>> calculateDifferences(List<List<String>> data);
 }
