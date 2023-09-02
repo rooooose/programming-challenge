@@ -24,8 +24,8 @@ class AppTest {
     private List<List<String>> expectedInitArr = new ArrayList<>();
     private List<List<String>> expectedDiffArr = new ArrayList<>();
     private String expectedMinEl;
-    private CsvReader csvReader = new CsvReader(dataSource);
-    private MinDiffProcessor minDiffProcessor = new MinDiffProcessor();
+    private CsvReader csvReader;
+    private MinDiffProcessor minDiffProcessor;
 
     @BeforeEach
     void setUp() {
@@ -40,11 +40,14 @@ class AppTest {
         expectedDiffArr.add(Arrays.asList("el2","7","10","3"));
 
         expectedMinEl = "el1";
+
+        csvReader = new CsvReader();
+        minDiffProcessor = new MinDiffProcessor();
     }
 
     @Test
     void testReadCsv() throws FileNotFoundException, IOException {
-        assertEquals(expectedInitArr, csvReader.read(), "The result is not identical to the csv file content");
+        assertEquals(expectedInitArr, csvReader.read(dataSource), "The result is not identical to the csv file content");
     }
 
     @Test

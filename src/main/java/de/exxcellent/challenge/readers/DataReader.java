@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface DataReader {
 
-    List<List<String>> read() throws FileNotFoundException, IOException;
+    List<List<String>> read(String dataSource) throws FileNotFoundException, IOException;
     
 }

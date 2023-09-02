@@ -10,15 +10,8 @@ import java.util.List;
 
 public class CsvReader implements DataReader {
 
-    //create constructor with dataSource as attribute, bufferedReader and fileReader
-    private String dataSource;
-
-    public CsvReader(String filepath){
-        dataSource = filepath;
-    }
-
     @Override
-    public List<List<String>> read() throws FileNotFoundException, IOException {
+    public List<List<String>> read(String dataSource) throws FileNotFoundException, IOException {
         
         List<List<String>> records = new ArrayList<>();
         try (BufferedReader br = new BufferedReader(new FileReader(dataSource))) {

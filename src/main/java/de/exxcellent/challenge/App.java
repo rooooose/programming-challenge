@@ -24,11 +24,11 @@ public final class App {
     public static void main(String... args) {
 
         String dataSource = "src/main/resources/de/exxcellent/challenge/" + args[1];
-        CsvReader csvReader = new CsvReader(dataSource);
-        MinDiffProcessor minDiffProcessor = new MinDiffProcessor();
+        CsvReader csvReader = new CsvReader();
         List<List<String>> data;
         try {
-            data = csvReader.read();
+            data = csvReader.read(dataSource);
+            MinDiffProcessor minDiffProcessor = new MinDiffProcessor();
             // System.out.println(data);
 
             if(args[1] == "weather.csv"){
