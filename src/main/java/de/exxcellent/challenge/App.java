@@ -13,6 +13,7 @@ import java.util.List;
  * design. Read: create your own classes and packages as appropriate.
  *
  * @author Benjamin Schmid <benjamin.schmid@exxcellent.de>
+ * @author Shir Frank <shir_fl@yahoo.fr>
  */
 public final class App {
 
