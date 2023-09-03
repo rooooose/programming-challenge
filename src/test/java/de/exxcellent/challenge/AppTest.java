@@ -32,14 +32,14 @@ class AppTest {
         dataSource = "src/main/resources/de/exxcellent/challenge/test.csv";
 
         expectedInitArr.add(new ArrayList<>(Arrays.asList("Element","Max","Min")));
-        expectedInitArr.add(new ArrayList<>(Arrays.asList("el1","3","4")));
-        expectedInitArr.add(new ArrayList<>(Arrays.asList("el2","7","10")));
+        expectedInitArr.add(new ArrayList<>(Arrays.asList("el1","10","7")));
+        expectedInitArr.add(new ArrayList<>(Arrays.asList("el2","4","3")));
 
         expectedDiffArr.add(new ArrayList<>(Arrays.asList("Element","Max","Min","Diff")));
-        expectedDiffArr.add(new ArrayList<>(Arrays.asList("el1","3","4","1")));
-        expectedDiffArr.add(new ArrayList<>(Arrays.asList("el2","7","10","3")));
+        expectedDiffArr.add(new ArrayList<>(Arrays.asList("el1","10","7","3")));
+        expectedDiffArr.add(new ArrayList<>(Arrays.asList("el2","4","3","1")));
 
-        expectedMinEl = "el1";
+        expectedMinEl = "el2";
 
         csvReader = new CsvReader();
         minDiffProcessor = new MinDiffProcessor();
@@ -55,10 +55,10 @@ class AppTest {
         assertEquals(expectedDiffArr, minDiffProcessor.calculateDifferencesBetweenCols(expectedInitArr, 2, 1), "The array doesn't contain the differences");
     }
 
-    // @Test
-    // void testfindMinEl() {
-    //     assertEquals(expectedMinEl, minDiffProcessor.findListElement(expectedDiffArr), "Minimum difference element should be el1");
-    // }
+    @Test
+    void testfindMinEl() {
+        assertEquals(expectedMinEl, minDiffProcessor.findListElement(expectedDiffArr, 3, 0), "The minimum difference element is wrong");
+    }
 
     @Test
     void runWeather() {
