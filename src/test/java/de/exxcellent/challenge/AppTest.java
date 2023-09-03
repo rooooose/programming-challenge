@@ -15,7 +15,7 @@ import de.exxcellent.challenge.processors.MinDiffProcessor;
 import de.exxcellent.challenge.readers.*;
 
 /**
- * JUnit 5 test case.
+ * JUnit 5 Tests for Csv Reader and MinDiffProcessor methods
  * @author Shir Frank <shir_fl@yahoo.fr>
  */
 class AppTest {
